@@ -466,7 +466,7 @@ definitions:
     - "time"
     properties:
       airport:
-        $ref: "#/definitions/Flight"
+        $ref: "#/definitions/Airport"
       time:
         type: "string"
         format: "date-time"
