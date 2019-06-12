@@ -39,14 +39,14 @@ CREATE TABLE `tbl_users` (
 
 CREATE TABLE `tbl_tickets` (
   `flight` int(11) NOT NULL,
-  `row` int(11) NOT NULL,
+  `seat_row` int(11) NOT NULL,
   `seat` char(1) NOT NULL,
   `class` int(11) NOT NULL,
   `reserver` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `reservation_timeout` datetime DEFAULT NULL,
   `booking_id` VARCHAR(45) DEFAULT NULL,
-  PRIMARY KEY (`flight`,`row`,`seat`),
+  PRIMARY KEY (`flight`,`seat_row`,`seat`),
   KEY `reserver_idx` (`reserver`),
   CONSTRAINT `flight` FOREIGN KEY (`flight`) REFERENCES `tbl_flights` (`id`),
   CONSTRAINT `reserver` FOREIGN KEY (`reserver`) REFERENCES `tbl_users` (`id`),
