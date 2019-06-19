@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS `utopia`;
 USE `utopia`;
 CREATE TABLE `tbl_airports` (
   `code` char(4) NOT NULL,
-  `name` varchar(45) NOT NULL,
+  `name` varchar(75) NOT NULL,
   PRIMARY KEY (`code`),
   UNIQUE KEY `idtbl_airports_UNIQUE` (`code`)
 );
