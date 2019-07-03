@@ -26,7 +26,6 @@ paths:
       operationId: "getAllAirports"
       produces:
       - "application/json"
-      - "application/xml"
       responses:
         200:
           description: "always successful"
@@ -42,7 +41,6 @@ paths:
       description: "Returns a single airport"
       operationId: "getAirportByCode"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - name: "code"
@@ -84,7 +82,6 @@ paths:
       operationId: "getFlightById"
       produces:
       - "application/json"
-      - "application/xml"
       parameters:
       - name: "flightId"
         in: "path"
@@ -116,7 +113,6 @@ paths:
         type: "number"
       produces:
       - "application/json"
-      - "application/xml"
       responses:
         200:
           description: "Successful operation"
@@ -148,7 +144,6 @@ paths:
         type: "string"
       produces:
       - "application/json"
-      - "application/xml"
       responses:
         200:
           description: "successful operation"
@@ -183,7 +178,6 @@ paths:
         type: "string"
       produces:
       - "application/json"
-      - "application/xml"
       responses:
         200:
           description: "successful operation"
@@ -227,7 +221,6 @@ paths:
           $ref: "#/definitions/Seat" # should we make a separate type for "ticket"?
       produces:
       - "application/json"
-      - "application/xml"
       responses: # Should we list 409 here as well?
         200:
           description: "successful operation"
@@ -272,7 +265,6 @@ paths:
           $ref: "#/definitions/Seat" # should we make a separate type for "ticket"?
       produces:
       - "application/json"
-      - "application/xml"
       responses:
         201: # Need to remember to pass this URL as Location field
           description: "Reservation Created"
@@ -329,7 +321,6 @@ paths:
         type: "string"
       produces:
       - "application/json"
-      - "application/xml"
       responses:
         200:
           description: "successful operation"
@@ -363,7 +354,6 @@ paths:
           $ref: "#/definitions/Seat" # should we make a separate type for "ticket"?
       produces:
       - "application/json"
-      - "application/xml"
       responses: # Should we list 409 here as well?
         200:
           description: "successful operation"
@@ -529,5 +519,3 @@ definitions:
         type: "string"
       displayName:
         type: "string"
-    xml:
-      name: "User"
