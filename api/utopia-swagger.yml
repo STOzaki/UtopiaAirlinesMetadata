@@ -388,52 +388,6 @@ paths:
           description: "Unauthorized"
         403:
           description: "Permission denied"
-  /user/login:
-    post:
-      tags:
-      - "user"
-      summary: "Logs user into the system"
-      operationId: "loginUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "body"
-        in: "body"
-        description: "The user name and password for login"
-        required: true
-        schema:
-          $ref: "#/definitions/UserLogin"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "string"
-          headers:
-            X-Rate-Limit:
-              type: "integer"
-              format: "int32"
-              description: "calls per hour allowed by the user"
-            X-Expires-After:
-              type: "string"
-              format: "date-time"
-              description: "date in UTC when token expires"
-        400:
-          description: "Invalid username/password supplied"
-  /user/logout:
-    post:
-      tags:
-      - "user"
-      summary: "Logs out current logged in user session"
-      description: ""
-      operationId: "logoutUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters: []
-      responses:
-        default:
-          description: "successful operation"
 definitions:
   Airport:
     type: "object"
@@ -492,17 +446,6 @@ definitions:
       reservation_timeout:
         type: string
         format: "date-time"
-  UserLogin:
-    type: "object"
-    required:
-    - "username"
-    - "password"
-    properties:
-      username:
-        type: string
-      password:
-        type: string
-        format: "password"
   User:
     type: "object"
     required:
